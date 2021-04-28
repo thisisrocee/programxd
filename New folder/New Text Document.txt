@@ -1,0 +1,3 @@
+Problems:
+- Can't sync images with questions
+- Questions are random
