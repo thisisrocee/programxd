@@ -20,7 +20,7 @@ let questions = [
         choice3: 'Java',
         choice4: 'C#',
         answer: 2,
-        img: 'valodas/haskell.jpg',
+        img: '/valodas/html.jpeg',
     },
     {
         question: 'Nosauc doto valodu!',
@@ -29,6 +29,7 @@ let questions = [
         choice3: 'PHP',
         choice4: 'PostScript',
         answer: 1,
+        img: '/valodas/javascript.png',
     },
     {
         question: 'Nosauc doto valodu!',
@@ -37,6 +38,7 @@ let questions = [
         choice3: 'PROLOG',
         choice4: 'C',
         answer: 4,
+        img: '/valodas/C.png',
     },
 ]
 
