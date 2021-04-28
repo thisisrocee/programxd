@@ -20,7 +20,7 @@ let questions = [
         choice3: 'Java',
         choice4: 'C#',
         answer: 2,
-        img: '/valodas/html.jpeg',
+        img: 'valodas/html.jpeg',
     },
     {
         question: 'Nosauc doto valodu!',
@@ -29,7 +29,7 @@ let questions = [
         choice3: 'PHP',
         choice4: 'PostScript',
         answer: 1,
-        img: '/valodas/javascript.png',
+        img: 'valodas/javascript.png',
     },
     {
         question: 'Nosauc doto valodu!',
@@ -38,7 +38,8 @@ let questions = [
         choice3: 'PROLOG',
         choice4: 'C',
         answer: 4,
-        img: '/valodas/C.png',
+        img: 'valodas/C.png',
+        
     },
 ]
 
@@ -59,15 +60,22 @@ getNewQuestion = () => {
         return window.location.assign('starp1.html')
     }
 
-    questionImage.src = currentQuestion.img
-
     questionCounter++
     progressText.innerText = `Jautājums ${questionCounter} no ${MAX_QUESTIONS}`
     progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`
 
     const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
     currentQuestion = availableQuestions[questionsIndex]
+    questionImage.src = currentQuestion.img
     question.innerText = currentQuestion.question
+
+    if (currentQuestion.img) {
+        questionImage.src = currentQuestion.img
+        questionImage.style.display = 'block'
+    } else {
+        questionImage.src = ''
+        questionImage.style.display = 'none'
+    }
 
     choices.forEach(choice => {
         const number = choice.dataset['number']
@@ -78,6 +86,8 @@ getNewQuestion = () => {
 
     acceptingAnswers = true
 }
+
+
 
 choices.forEach(choice => {
     choice.addEventListener('click', e => {
